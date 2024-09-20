@@ -15,6 +15,20 @@
       "when": 1726843877732,
       "tag": "0001_dusty_angel",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1726843998466,
+      "tag": "0002_demonic_lifeguard",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1726844086987,
+      "tag": "0003_slim_kang",
+      "breakpoints": true
     }
   ]
 }
