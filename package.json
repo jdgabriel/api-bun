@@ -9,10 +9,13 @@
     "test": "bun test",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "bun src/db/migrate.ts",
+    "db:seed": "bun src/db/seed.ts",
     "db:studio": "drizzle-kit studio"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.0.1",
     "@types/bun": "latest",
+    "chalk": "^5.3.0",
     "drizzle-kit": "^0.24.2"
   },
   "peerDependencies": {
