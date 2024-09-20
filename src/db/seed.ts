@@ -1,3 +1,5 @@
+/* eslint-disable drizzle/enforce-delete-with-where */
+
 import { faker } from '@faker-js/faker'
 import chalk from 'chalk'
 import { db } from './connection'
@@ -17,18 +19,18 @@ await db.insert(users).values([
   {
     name: faker.person.fullName(),
     email: faker.internet.email(),
-    role: 'customer'
+    role: 'customer',
   },
   {
     name: faker.person.fullName(),
     email: faker.internet.email(),
-    role: 'customer'
+    role: 'customer',
   },
   {
     name: faker.person.fullName(),
     email: faker.internet.email(),
-    role: 'customer'
-  }
+    role: 'customer',
+  },
 ])
 
 console.log(chalk.yellow('✅ Create customers.'))
@@ -36,13 +38,16 @@ console.log(chalk.yellow('✅ Create customers.'))
 /**
  * Create manager
  */
-const [manager] = await db.insert(users).values([
-  {
-    name: faker.person.fullName(),
-    email: 'admin2@admin.com',
-    role: 'manager'
-  }
-]).returning({ id: users.id })
+const [manager] = await db
+  .insert(users)
+  .values([
+    {
+      name: faker.person.fullName(),
+      email: 'admin2@admin.com',
+      role: 'manager',
+    },
+  ])
+  .returning({ id: users.id })
 
 console.log(chalk.yellow('✅ Create manager.'))
 
@@ -53,8 +58,8 @@ await db.insert(restaurants).values([
   {
     name: faker.company.name(),
     description: faker.lorem.paragraph(),
-    managerId: manager.id
-  }
+    managerId: manager.id,
+  },
 ])
 
 console.log(chalk.yellow('✅ Create restaurant.'))

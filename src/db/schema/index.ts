@@ -1,3 +1,2 @@
-export * from './restaurants';
-export * from './users';
-
+export * from './restaurants'
+export * from './users'
