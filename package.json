@@ -1,7 +1,13 @@
 {
   "name": "api-pizzashop-bun",
-  "module": "index.ts",
+  "module": "src/http/server.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/http/server.ts",
+    "build": "bun build src/http/server.ts",
+    "start": "NODE_ENV=production bun src/http/server.ts",
+    "test": "bun test"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
