@@ -1,10 +1,11 @@
+import jwt from '@elysiajs/jwt'
 import { Elysia, t } from 'elysia'
 
-import jwt from '@elysiajs/jwt'
+import { getProfile } from '@routes/get-profile'
+import { registerRestaurante } from '@routes/register-restaurant'
+import { sendAuthLink } from '@routes/send-auth-link'
+import { signOut } from '@routes/sign-out'
 import { env } from '../env'
-import { registerRestaurante } from './routes/register-restaurant'
-import { sendAuthLink } from './routes/send-auth-link'
-import { signOut } from './routes/sign-out'
 
 const app = new Elysia()
   .use(
@@ -18,6 +19,7 @@ const app = new Elysia()
   )
   .use(sendAuthLink)
   .use(signOut)
+  .use(getProfile)
   .use(registerRestaurante)
 
 app.listen(3333, () => {
