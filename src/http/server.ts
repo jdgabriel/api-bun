@@ -2,6 +2,7 @@ import jwt from '@elysiajs/jwt'
 import { Elysia, t } from 'elysia'
 
 import { env } from '@env'
+import { approveOrder } from '@routes/approve-order'
 import { getManagedRestaurante } from '@routes/get-managed-restaurant'
 import { getOrderDetails } from '@routes/get-order-details'
 import { getProfile } from '@routes/get-profile'
@@ -37,6 +38,7 @@ const app = new Elysia()
   .use(getManagedRestaurante)
   .use(registerRestaurante)
   .use(getOrderDetails)
+  .use(approveOrder)
 
 app.listen(3333, () => {
   console.log(`Server running at http://localhost:3333`)
