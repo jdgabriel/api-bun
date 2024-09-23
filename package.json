@@ -24,6 +24,8 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "@elysiajs/cookie": "^0.8.0",
+    "@elysiajs/jwt": "^1.1.1",
     "@paralleldrive/cuid2": "^2.2.2",
     "cuid": "^3.0.0",
     "drizzle-orm": "^0.33.0",
