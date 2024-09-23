@@ -1,6 +1,5 @@
 import { Elysia, t } from 'elysia'
 
-import cookie from '@elysiajs/cookie'
 import jwt from '@elysiajs/jwt'
 import { env } from '../env'
 import { registerRestaurante } from './routes/register-restaurant'
@@ -16,7 +15,6 @@ const app = new Elysia()
       }),
     }),
   )
-  .use(cookie())
   .use(registerRestaurante)
   .use(sendAuthLink)
 
