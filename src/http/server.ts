@@ -6,6 +6,7 @@ import { approveOrder } from '@routes/approve-order'
 import { cancelOrder } from '@routes/cancel-order'
 import { deliverOrder } from '@routes/deliver-order'
 import { dispatchOrder } from '@routes/dispatch-order'
+import { getDailyReceiptInPeriod } from '@routes/get-daily-receipt-in-period'
 import { getDayOrdersAmount } from '@routes/get-day-orders-amount'
 import { getManagedRestaurante } from '@routes/get-managed-restaurant'
 import { getCancelMonthOrdersAmount } from '@routes/get-month-cancel-orders-amount'
@@ -60,6 +61,7 @@ const app = new Elysia()
   .use(getMonthOrdersAmount)
   .use(getCancelMonthOrdersAmount)
   .use(getPopularProducts)
+  .use(getDailyReceiptInPeriod)
 
 app.listen(3333, () => {
   console.log(`Server running at http://localhost:3333`)
