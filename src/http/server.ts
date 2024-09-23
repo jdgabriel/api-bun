@@ -18,6 +18,18 @@ const app = new Elysia()
       }),
     }),
   )
+  .onError(({ code, error, set }) => {
+    switch (code) {
+      case 'VALIDATION': {
+        set.status = error.status
+        return error.toResponse()
+      }
+      default: {
+        console.error(error)
+        return new Response(null, { status: 500 })
+      }
+    }
+  })
   .use(sendAuthLink)
   .use(signOut)
   .use(getProfile)
