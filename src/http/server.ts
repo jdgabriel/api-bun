@@ -1,6 +1,7 @@
 import jwt from '@elysiajs/jwt'
 import { Elysia, t } from 'elysia'
 
+import { getManagedRestaurante } from '@routes/get-managed-restaurant'
 import { getProfile } from '@routes/get-profile'
 import { registerRestaurante } from '@routes/register-restaurant'
 import { sendAuthLink } from '@routes/send-auth-link'
@@ -20,6 +21,7 @@ const app = new Elysia()
   .use(sendAuthLink)
   .use(signOut)
   .use(getProfile)
+  .use(getManagedRestaurante)
   .use(registerRestaurante)
 
 app.listen(3333, () => {
