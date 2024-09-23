@@ -8,6 +8,7 @@ import { deliverOrder } from '@routes/deliver-order'
 import { dispatchOrder } from '@routes/dispatch-order'
 import { getManagedRestaurante } from '@routes/get-managed-restaurant'
 import { getOrderDetails } from '@routes/get-order-details'
+import { getOrders } from '@routes/get-orders'
 import { getProfile } from '@routes/get-profile'
 import { registerRestaurante } from '@routes/register-restaurant'
 import { sendAuthLink } from '@routes/send-auth-link'
@@ -40,6 +41,7 @@ const app = new Elysia()
   .use(getProfile)
   .use(getManagedRestaurante)
   .use(registerRestaurante)
+  .use(getOrders)
   .use(getOrderDetails)
   .use(approveOrder)
   .use(cancelOrder)
