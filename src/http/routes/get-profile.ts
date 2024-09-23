@@ -1,5 +1,6 @@
 import Elysia from 'elysia'
-import { db } from '../../db/connection'
+
+import { db } from '@database/connection'
 import { auth } from '../auth'
 import { UnauthorizedError } from '../errors/unauthorized'
 

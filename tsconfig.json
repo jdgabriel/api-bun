@@ -26,6 +26,12 @@
     "paths": {
       "@routes/*": [
         "./src/http/routes/*"
+      ],
+      "@env": [
+        "./src/env"
+      ],
+      "@database/*": [
+        "./src/db/*"
       ]
     }
   }
