@@ -4,6 +4,7 @@ import jwt from '@elysiajs/jwt'
 import { env } from '../env'
 import { registerRestaurante } from './routes/register-restaurant'
 import { sendAuthLink } from './routes/send-auth-link'
+import { signOut } from './routes/sign-out'
 
 const app = new Elysia()
   .use(
@@ -15,8 +16,9 @@ const app = new Elysia()
       }),
     }),
   )
-  .use(registerRestaurante)
   .use(sendAuthLink)
+  .use(signOut)
+  .use(registerRestaurante)
 
 app.listen(3333, () => {
   console.log(`Server running at http://localhost:3333`)
